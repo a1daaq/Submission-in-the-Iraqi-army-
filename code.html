@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقديم على الجيش العراقي</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="top-bar">
+      <div class="container">
+        <i class="fas fa-phone"></i> <span>اتصل بنا: 123-456-7890</span>
+      </div>
+    </div>
+
+    <header>
+        <div class="container">
+          <div class="logo">
+            <img src="logo.png" alt="شعار الجيش العراقي" width="80">  <!-- استبدل "logo.png" بمسار شعارك -->
+          </div>
+            <h1>التقديم على الجيش العراقي</h1>
+            <p>بوابة التقديم الإلكتروني للالتحاق بالجيش العراقي</p>
+        </div>
+    </header>
+
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="#intro"><i class="fas fa-info-circle"></i> عن التقديم</a></li>
+          <li><a href="#requirements"><i class="fas fa-list-check"></i> الشروط والمتطلبات</a></li>
+          <li><a href="#application-form"><i class="fas fa-file-alt"></i> استمارة التقديم</a></li>
+          <li><a href="#faq"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="main-content">
+        <section id="intro">
+          <div class="section-header">
+            <h2><i class="fas fa-info-circle"></i> عن التقديم</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              هنا يمكنك تقديم طلب للالتحاق بالجيش العراقي. يرجى قراءة الشروط والمتطلبات بعناية قبل البدء في ملء
+              الاستمارة.
+              <!--  أضف المزيد من المعلومات هنا -->
+            </p>
+            <p>
+              نحن نبحث عن أفراد متحمسين وملتزمين لخدمة وطنهم. انضم إلينا وكن جزءًا من قوة الدفاع عن العراق.
+            </p>
+          </div>
+        </section>
+
+        <section id="requirements">
+          <div class="section-header">
+            <h2><i class="fas fa-list-check"></i> الشروط والمتطلبات</h2>
+          </div>
+           <div class="section-content">
+            <ul>
+              <li>أن يكون المتقدم عراقي الجنسية.</li>
+              <li>أن لا يقل عمر المتقدم عن 18 عامًا ولا يزيد عن 30 عامًا.</li>
+              <li>أن يكون لائقًا طبيًا.</li>
+              <li>أن يكون حسن السيرة والسلوك.</li>
+              <li>أن يكون حاصلاً على شهادة  <span id="min-education"></span> على الأقل.</li>
+              <li><!-- أضف المزيد من الشروط --></li>
+            </ul>
+           </div>
+        </section>
+
+        <section id="application-form">
+          <div class="section-header">
+           <h2><i class="fas fa-file-alt"></i> استمارة التقديم</h2>
+          </div>
+           <div class="section-content">
+            <form id="army-application" action="submit_application.php" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="fullName">الاسم الكامل: <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required>
+                <span class="tooltip">أدخل اسمك الكامل كما هو مسجل في هويتك الوطنية.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="dob">تاريخ الميلاد: <span class="required">*</span></label>
+                <input type="date" id="dob" name="dob" required>
+                <span class="tooltip">اختر تاريخ ميلادك الصحيح.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="nationalId">رقم الهوية الوطنية: <span class="required">*</span></label>
+                <input type="text" id="nationalId" name="nationalId" required>
+                 <span class="tooltip">أدخل رقم هويتك الوطنية المكون من 12 رقم.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="address">العنوان: <span class="required">*</span></label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="phoneNumber">رقم الهاتف: <span class="required">*</span></label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                <span class="tooltip">أدخل رقم هاتفك المحمول.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">البريد الإلكتروني (اختياري):</label>
+                <input type="email" id="email" name="email">
+                <span class="tooltip">أدخل بريدك الإلكتروني إذا كنت ترغب في تلقي التحديثات.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="education">المستوى التعليمي: <span class="required">*</span></label>
+                <select id="education" name="education" required>
+                  <option value="">اختر...</option>
+                  <option value="primary">ابتدائي</option>
+                  <option value="intermediate">متوسط</option>
+                  <option value="secondary">ثانوي</option>
+                  <option value="diploma">دبلوم</option>
+                  <option value="bachelor">بكالوريوس</option>
+                  <option value="higher">دراسات عليا</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="militaryService">الخدمة العسكرية السابقة (إن وجدت):</label>
+                <textarea id="militaryService" name="militaryService" rows="3"></textarea>
+              </div>
+
+               <div class="form-group">
+                    <label for="attachment">المرفقات (اختياري):</label>
+                    <input type="file" id="attachment" name="attachment">
+                   <p class="help-text">يمكنك إرفاق نسخة من هويتك الوطنية، شهادة الميلاد، أو أي مستندات أخرى ذات صلة. (الحد الأقصى لحجم الملف: 5 ميجابايت)</p>
+                   <div class="progress-bar-container" style="display: none;">
+                      <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+
+
+              <div class="form-group">
+                <label for="agreeTerms">
+                  <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                  أوافق على <a href="#terms" id="terms-link">الشروط والأحكام</a> <span class="required">*</span>
+                </label>
+              </div>
+
+              <button type="submit">إرسال الطلب <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <p id="submit-message"></p>
+          </div>
+        </section>
+
+        <section id="faq">
+          <div class="section-header">
+            <h2><i class="fas fa-question-circle"></i> الأسئلة الشائعة</h2>
+          </div>
+          <div class="section-content">
+            <div class="faq-item">
+              <h3 class="faq-question">ما هي المستندات المطلوبة للتقديم؟ <i class="fas fa-chevron-down"></i></h3>
+              <div class="faq-answer">
+                <ul>
+                  <li>نسخة من الهوية الوطنية.</li>
+                  <li>نسخة من شهادة الميلاد.</li>
+                  <li>شهادة تثبت مستواك التعليمي.</li>
+                    <li><!-- أضف المزيد --></li>
+                </ul>
+              </div>
+            </div>
+             <div class="faq-item">
+              <h3 class="faq-question">هل يمكنني التقديم إذا كنت قد خدمت في الجيش سابقًا؟ <i class="fas fa-chevron-down"></i></h3>
+              <div class="faq-answer">
+                نعم، يمكنك التقديم. يرجى تقديم تفاصيل خدمتك السابقة في الاستمارة.
+              </div>
+            </div>
+
+             <div class="faq-item">
+              <h3 class="faq-question">متى سيتم الرد على طلبي؟<i class="fas fa-chevron-down"></i></h3>
+              <div class="faq-answer">
+                سيتم مراجعة طلبك والتواصل معك في أقرب وقت ممكن. قد يستغرق الأمر بعض الوقت، لذا يرجى التحلي بالصبر.
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="testimonials" style="display: none"> <!--  قسم الشهادات (مخفي افتراضيًا) -->
+          <h2><i class="fas fa-comments"></i> شهادات المجندين</h2>
+            <div class="testimonial">
+                <p>"لقد كانت تجربة الانضمام إلى الجيش العراقي شرفًا عظيمًا لي. لقد تعلمت الكثير واكتسبت مهارات قيمة."</p>
+                <p class="testimonial-author">- أحمد، مجند سابق</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"الجيش العراقي هو عائلة كبيرة.  أشعر بالفخر لكوني جزءًا منها."</p>
+                <p class="testimonial-author">- فاطمة، مجندة حالية</p>
+            </div>
+
+        </section>
+
+        <section id="additional-info">
+            <h2><i class="fas fa-info"></i> معلومات إضافية</h2>
+            <p>
+                لمزيد من المعلومات، يمكنك زيارة موقع وزارة الدفاع العراقية أو الاتصال بنا على الأرقام الموضحة في أعلى
+                الصفحة.
+            </p>
+              <p><a href="#" class="button">تواصل معنا</a></p>
+        </section>
+
+          <!--  نافذة الشروط والأحكام (Modal) -->
+          <div id="terms-modal" class="modal">
+            <div class="modal-content">
+              <span class="close-button">&times;</span>
+              <h2>الشروط والأحكام</h2>
+              <p>
+                <!--  ضع هنا نص الشروط والأحكام -->
+                ...
+              </p>
+               <button id="close-terms">موافق</button>
+            </div>
+          </div>
+      </div> <!-- end main-content -->
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>روابط مهمة</h3>
+           <ul>
+            <li><a href="https://mod.mil.iq/" target="_blank">وزارة الدفاع العراقية</a></li>
+            <!-- أضف المزيد من الروابط -->
+          </ul>
+        </div>
+
+        <div class="widget">
+            <h3>تابعنا</h3>
+            <div class="social-icons">
+              <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+      </aside>
+
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>جميع الحقوق محفوظة &copy; 2024 وزارة الدفاع العراقية</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
